@@ -1,0 +1,829 @@
+
+
+/* -------------------------- FUENTES -------------------------- */
+
+@font-face {
+    font-family: "trebuchet";
+    src: url(../fonts/TrebuchetMS.ttf);
+    font-weight: normal;
+    font-size: normal;
+}
+
+@font-face {
+    font-family: "bebasneue";
+    src: url(../fonts/BebasNeue.otf);
+    font-weight: normal;
+    font-size: normal;
+}
+
+
+@font-face {
+    font-family: "icons";
+    src: url(../fonts/websymbols-regular-webfont.eot),
+    url(../fonts/websymbols-regular-webfont.svg) format("svg"),
+    url(../fonts/websymbols-regular-webfont.woff) format("woff"),
+    url(../fonts/websymbols-regular-webfont.ttf) format("truetype");
+    font-weight: normal;
+    font-size: normal;
+}
+
+/* -------------------------- ESTILOS GENERALES -------------------------- */
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-image: url(../img/pattern.png);
+}
+
+.gear {
+    font-family: "icons";
+    color: white;
+}
+
+.icons{
+    font-family: "icons";
+}
+
+.wrap{
+    width: 1250px;
+    margin: 0px auto;
+}
+
+input{
+    all: unset;
+}
+
+.clearfix{
+    float: none;
+    clear: both;
+}
+/* -------------------------- CABECERA -------------------------- */
+
+#header{
+    width: 100%;
+    height: 70px;
+    background-color: black;
+    font-family: "bebasneue";
+    color: white;
+    box-shadow: 0px 2px 5px #939393;
+}
+
+#buttonOne{
+    float: left;
+    background-color: rgb(30, 158, 213);
+    width: 135px;
+    height: 50px;
+    margin-top: 9px;
+    border-radius: 4px;
+    padding: 5px;
+    box-sizing: border-box;
+    text-align: center;
+    transition: all 500ms;
+}
+
+#buttonOne:hover{
+    width: 145px;
+}
+
+
+#buttonOne .gear{
+    display: block;
+    float: left;
+    font-size: 24px;
+    margin-left: 10px;
+    margin-top: 4px;
+    box-sizing: border-box;
+}
+
+#buttonOne:hover .gear{
+animation-name: rotate-gear;
+animation-duration: 2s;
+animation-iteration-count: infinite;
+animation-timing-function: ease-in-out;
+}
+
+@keyframes rotate-gear{
+    0% {
+        transform: rotateZ(0deg);
+    }
+    
+    50%{
+        transform: rotateZ(160deg);
+    }
+
+    100%{
+        transform: rotateZ(0deg);
+    }
+}
+
+#buttonOne:hover{
+    box-shadow: 0px 0px 12px #379ec3, 0px 0px 8px #fcfeff inset;
+    animation-name: background-change;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes background-change {
+    0% {
+        background-color: rgb(30, 207, 213);
+    }
+    
+    50%{
+        background-color: #1e9ed5;
+    }
+
+    100%{
+        background-color: rgb(26, 216, 222);
+    }
+}
+
+.logo {
+    color: white;
+    float: right;
+    letter-spacing: 1px;
+    font-size: 34px;
+    margin-top: 1px;
+    margin-right: 14px;
+}
+
+#buttonOne:hover .logo{
+    animation: logoGiggle 1000ms infinite;
+}
+
+@keyframes logoGiggle {
+    0%{
+        transform: translateX(0%);
+    }
+
+    50%{
+        transform: translateX(5%);
+    }
+
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+
+#menu {
+    display: block;
+    float: right;
+    background: transparent;
+}
+
+#menu ul li {
+    height: 70px;
+    display: inline-block;
+    margin: 0px 20px 0px 20px;
+    line-height: 70px;
+    text-align: center;
+}
+
+#menu ul li a{
+    display: block;
+    text-decoration: none;
+    font-weight: 100;
+    font-size: 24px;
+    color: white;
+    letter-spacing: 1px;
+    transition: all 200ms;
+}
+
+#menu ul li a:hover{
+    color: rgb(30, 158, 213);
+    transform: scale(1.2,1.2);
+    cursor: pointer;
+}
+
+/* -------------------------- BANNER -------------------------- */
+
+#banner{
+    display: block;
+    overflow: hidden;
+    width: 97%;
+    height: 100px;
+    border: 10px solid #ffffff;
+    box-shadow: 1px 1px 2px gray;
+    margin-top: 40px;
+    background-image: url(../img/new-banner.png);
+    background-position-x: center;
+    background-position-y: 100px;
+    animation: scrollBackground 2s ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes scrollBackground {
+    0% {
+        background-position-y: 100px;
+        filter: blur(0px);
+    }
+
+    25%{
+        filter: blur(2px);
+    }
+
+    50%{
+        filter: blur(4px);
+    }
+
+    75%{
+        filter:blur(2px);
+    }
+
+    100% {
+        background-position-y: 1770px;
+        filter: blur(0px);
+    }
+}
+
+#banner h1 {
+    font-family: "trebuchet";
+    color: white;
+    text-align: center;
+    line-height: 100px;
+    font-size: 38px;
+    text-shadow: 2px 2px 1px black;
+    animation: scrollTitle 2s ease-out;
+    animation-fill-mode: forwards;
+    transition-timing-function: ease-in-out;
+    transition: all 400ms;
+}
+
+#banner:hover h1{
+    font-size: 40px;
+    box-shadow: 0px 0px 10px white inset;
+
+}
+
+@keyframes scrollTitle {
+    0%{
+        transform: translateY(-180%);
+    }
+
+    100%{
+        transform: translateY(0%);
+    }
+}
+
+
+
+/* -------------------------- CARDS -------------------------- */
+
+#cards{
+    width: 100%;
+    margin: 40px auto;
+    font-family: "trebuchet";
+}
+
+#card{
+    display: block;
+    float: left;
+    width: 215px;
+    height: 300px;
+    border: 1px solid #eee;
+    margin: 16px;
+    padding: 5px;
+    background-color: white;
+    box-shadow: 1px 1px 2px rgb(187, 187, 187), 1px 1px 2px rgb(187, 187, 187);
+    box-sizing: border-box;
+    transition: all 300ms;
+}
+
+#card:hover{
+    background-color: #0c3148;
+    border: none;
+    color: white;
+    animation: innerGlow 2s infinite ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes innerGlow {
+    0%{
+        box-shadow: 0px 0px 10px white inset, 0px 0px 5px white inset, 1px 1px 2px rgb(187, 187, 187);
+        border-radius: 5px;
+    }
+
+    50%{
+        box-shadow: 0px 0px 20px white inset, 0px 0px 10px white inset, 1px 1px 2px rgb(187, 187, 187);
+        border-radius: 5px;
+    }
+
+    100%{
+        box-shadow: 0px 0px 10px white inset, 0px 0px 5px white inset, 1px 1px 2px rgb(187, 187, 187);
+        border-radius: 5px;    
+    }
+}
+
+#card:hover .icons{
+    color: white;
+}
+
+#card:hover .category{
+    color: white;
+}
+
+#card:hover .description{
+    color: white;
+}
+
+#card .icons{
+    width: 100%;
+    height: 100px;
+    display: block;
+    text-align: center;
+    line-height: 100px;
+    font-size: 40px;
+    color: #26292a;
+}
+
+#card:hover .icons{
+    animation: iconMovement 2s infinite ease; /*step-end hace que vaya de paso a paso sin recorrido*/
+    animation-fill-mode: forwards;
+}
+
+@keyframes iconMovement {
+    0%{
+        transform: translateY(0%);
+    }
+
+    50%{
+        transform: translateY(10%);
+    }
+
+    100%{
+        transform: translateY(0%);
+    }
+}
+
+#card .category{
+    display: block;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 5px;
+    font-size: 22px;
+    text-align: center;
+    color: #00538b;
+}
+
+
+#card .description{
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    color: #28638b;
+}
+
+/* -------------------------- SIDEBAR -------------------------- */
+
+#sidebar{
+    width: 298px;
+    min-height: 700px;
+    font-family: "trebuchet";
+    float: right;
+    margin: 20px;
+    margin-right: 30px;
+}
+
+#sidebar h3{
+    display: block;
+    width: auto;
+    height: 45px;
+    box-shadow: 0px 1px 0px #393d3f, 1px 2px 0px #393d3f, 2px 3px 0px #393d3f, 3px 4px 0px #393d3f;
+    font-size: 24px;
+    font-family: "bebasneue";
+    letter-spacing: 2px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    padding-left: 15px;
+    background: url(../img/pxgray.png), white;
+    color: #26292a;
+    line-height: 48px;
+}
+
+#sidebar h3:first-child{
+    margin-top: 0px;
+}
+
+/* -------------------------- SEARCH SIDEBAR -------------------------- */
+
+#search {
+    width: 90%;
+    height: 30px;
+    margin:10px auto;
+    background-color: white;
+    box-shadow: 0px 0px 4px #ccc inset;
+    border-radius: 4px;
+}
+
+#sidebar input[type="text"]{
+    width: 85%;
+    height: 30px;
+    border: none;
+    padding-left: 5px;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #ccc;
+    line-height: 25px;
+    transition: all 300ms;
+}
+
+#sidebar input[type="text"]:focus{
+    outline: none;
+    color: #393d3f;
+}
+
+#search input[type="button"],
+#search input[type="submit"]{
+height: 30px;
+cursor: pointer;
+font-size: 16px;
+background-color: transparent;
+outline: none;
+padding-left: 5px;
+border-left: 1px solid #ccc;
+color: #555;
+box-shadow: none;
+transition: all 300ms;
+}
+
+#search input[type="button"]:hover,
+#search input[type="submit"]:hover{
+font-size: 20px;
+color: #28638b;
+}
+
+/* -------------------------- BOX CONTAINERS SIDEBAR -------------------------- */
+
+.sidebar-box{
+    width: 85%;
+    height: 240px;
+    margin: 0px auto;
+    margin-top: 20px;
+    padding-top: 2px;
+    background-color: white;
+    box-shadow: 0px 0px 1px rgba(0,0,0,0.3), 0px 3px 7px rgba(0,0,0,0.3), 0px 1px 0px white inset, 0px -3px 2px rgba(0,0,0,0.3) inset;
+}
+
+/*SOCIALS SIDEBAR*/
+
+#login input[type="email"],
+#login input[type="password"]{
+    display: block;
+    width: 74%;
+    height: 35px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 3px gray inset;
+    margin: 0px auto;
+    margin-top: 9px;
+    margin-left: 9px;
+    padding-left: 45px;
+    color: #ccc;
+}
+
+#login input[type="email"]:focus,
+#login input[type="password"]:focus{
+color: #393d3f;
+}
+
+#login #user, #password {
+    position: absolute;
+    margin: 5px;
+    margin-left: 17px;
+    font-size: 18px;
+    color: #393d3f;
+}
+
+#login #password{
+    font-size: 24px;
+    margin-top: 13px;
+    margin-left: 20px;
+}
+
+#login input[type="button"],
+#login input[type="submit"],
+#login input[type="reset"],
+#search button{
+    display: block;
+    float: left;
+    cursor: pointer;
+    width: 100px;
+    height: 36px;
+    color: white;
+    background: #00538b;
+    text-align: center;
+    margin: 13px;
+    margin-top: 16px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    transition: all 4000ms;
+}
+
+
+#login input[type="button"]:hover,
+#login input[type="submit"]:hover,
+#login input[type="reset"]:hover,
+#search button:hover{
+background: linear-gradient(to bottom, #379ec3 0%, #00538b 100%);
+transition: all 4000ms;
+}
+
+
+#login a{
+    float: left;
+    margin: 0px auto;
+    margin-left: 15px;
+    text-decoration: none;
+    color: #393d3f;
+    font-size: 14px;
+    transition: all 500ms;
+}
+
+#login .register {
+margin-bottom: 5px;
+}
+
+#login a:hover{
+    text-decoration: underline;
+    color: #28638b;
+    transition: all 200ms;
+}
+
+/* -------------------------- SOCIALS SIDEBAR -------------------------- */
+
+#socials{
+    height: 200px;
+}
+
+#socials a{
+    display: block;
+    color: #393d3f;
+    font-size: 36px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+/* -------------------------- SPONSORS -------------------------- */
+
+#sponsor img{
+    width: 100%;
+    height: 100%;
+}
+
+/* -------------------------- ARTICULOS -------------------------- */
+
+#articles{
+    float: left;
+    width: 849px;
+    height: auto;
+    display: block;
+    margin-top: 30px;
+}
+
+#articles h2{
+    float: left;
+    display: block;
+    width: 100%;
+    height: 60px;
+    margin-top: -11px;
+    margin-bottom: 15px;
+    background: url(../img/pxgray.png);
+    box-shadow: 0px 1px 0px #393d3f, 1px 2px 0px #393d3f, 2px 3px 0px #393d3f, 3px 4px 0px #393d3f;
+    text-align: center;
+    line-height: 66px;
+    font-family: "bebasneue";
+    font-size: 38px;
+    letter-spacing: 2px;
+    color: #272a2b;
+}
+
+#articles article{
+    float: left;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    box-sizing: border-box;
+    background-color: white;
+    border: #eee;
+    box-shadow: 0px 0px 2px #555;
+}
+
+#articles h4{
+    display: block;
+    font-family: "trebuchet";
+    font-size: 16px;
+    margin: 10px;
+    color: #28638b;
+}
+
+#articles h4 a{
+    text-decoration: none;
+}
+
+#articles h4 a:hover{
+    text-decoration: underline;
+    color: #379ec3;
+}
+
+#articles p{
+    font-family: "trebuchet";
+    margin: 10px;
+    text-justify:newspaper;
+}
+
+#articles .read{
+
+    margin-left: 2px;
+    font-size: 12px;
+    color: #379ec3;
+    text-decoration: none;
+
+}
+
+#articles .read:hover{
+    color:#00538b;
+    text-decoration: underline;
+}
+
+#articles .data{
+    float: right;
+    display: block;
+    width: auto;
+    height: auto;
+    margin: 0px auto;
+    background-color: #393d3f;
+    color: white;
+    padding: 5px;
+    border-radius: 0px 0px 0px 5px;
+    font-family: "trebuchet";
+    font-size: 13px;
+}
+
+#articles .data span{
+padding: 6px;
+}
+
+/* -------------------------- BLOG BUTTON -------------------------- */
+
+#articles #blog {
+    width: 100%;
+    height: 120px;
+    transition: all 300ms;
+}
+
+#articles #blog:hover {
+    background-color: #00538b;
+    border-radius: 5px;
+    animation: innerBlogGlow 2s infinite ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes innerBlogGlow {
+    0%{
+        box-shadow: 0px 0px 10px white inset, 0px 0px 5px white inset, 0px 0px 2px white inset;
+    }
+
+    50%{
+        box-shadow: 0px 0px 20px white inset, 0px 0px 10px white inset, 0px 0px 4px white inset;
+    }
+
+    100%{
+        box-shadow: 0px 0px 10px white inset, 0px 0px 5px white inset, 0px 0px 2px white inset;
+    }
+}
+
+
+#articles #blog a{
+    display: block;
+    text-decoration: none;
+    font-family: "bebasneue";
+    font-size: 32px;
+    text-align: center;
+    line-height: 120px;
+    color: #00538b;
+    transition: all 300ms;
+}
+
+#articles #blog:hover a{
+    animation: blogMovement 2s infinite ease;
+    animation-fill-mode: forwards;
+    font-size: 40px;
+}
+
+@keyframes blogMovement {
+    0%{
+        transform: translateY(0%);
+        color: white;
+        
+    }
+
+    50%{
+        transform: translateY(-10%);
+        color: white;
+    }
+
+    100%{
+        transform: translateY(0%);
+        color: white;
+    }
+}
+/* -------------------------- FOOTER -------------------------- */
+
+#footer{
+    width: 100%;
+    height: 450px;
+    background-color: #26292a;
+}
+
+/*Con este estilo en concreto, elijo los primeros div que estan justo despues de la clase .wrap*/
+#footer .wrap > div{
+    float: left;
+    width: 370px;
+    margin: 0px auto;
+    margin-right: 36px;
+    margin-left: 10px;
+    margin-top: 40px;
+}
+
+#footer h5{
+    display: block;
+    width: 100%;
+    height: 50px;
+    background-color: rgb(209, 209, 209);
+    font-family: "bebasneue";
+    font-size: 24px;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    text-align: center;
+    border-radius: 5px;
+    line-height: 50px;
+    
+}
+
+#footer #menu_footer ul li{
+    margin: 20px;
+    border-bottom: 1px solid rgb(198, 198, 198);
+    padding-bottom: 5px;
+    list-style: none;
+}
+
+#footer #menu_footer ul li a{
+    font-family: "bebasneue";
+    font-size: 24px;
+    text-decoration: none;
+    color: white;
+    transition: all 300ms;
+}
+
+#footer #menu_footer ul li a:hover{
+    text-decoration: underline;
+    color: #379ec3 ;
+}
+
+#footer #info #img_develop{
+    margin-top: 17px;
+    margin-bottom: 10px;
+    margin-left: 73px;
+    width: 65%;
+}
+
+#footer iframe { 
+    width: 100%;
+    height: 300px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+#footer #browsers a img{
+    margin-top: 17px;
+    margin-bottom: 13px;
+    width: 58px;
+}
+
+.author{
+    text-align: center;
+}
+
+.author p{
+    margin-top: 15px;
+    font-family: "trebuchet";
+    font-size: 15px;
+    font-weight: bolder;
+    color: white;
+}
+
+.author a{
+    text-decoration: none;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: lighter;
+    transition: all 300ms;
+}
+
+.author a:hover{
+color: #379ec3;
+}
